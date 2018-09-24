@@ -26,7 +26,6 @@ def fetchall():
     conn = helper.get_conn(DB_FILE_PATH)
     return helper.fetchall(conn, sql)
 
-
 def fetchone(ip):
     sql = '''SELECT * FROM `hits` WHERE `ip` = ?;'''
     conn = helper.get_conn(DB_FILE_PATH)

@@ -25,8 +25,8 @@ sys.setdefaultencoding("utf-8")
 
 
 app = Flask(__name__)
-# app.debug = True
-app.debug = False
+app.debug = True
+# app.debug = False
 
 SUPPORT_PIROBOX = True
 IMAGE_MAX_WIDTH = 480
@@ -52,7 +52,7 @@ def before_request():
 @app.errorhandler(404)
 def page_not_found(error):
     app.logger.warning('page_not_found: %s' % error)
-    return 'This page does not exist', 404
+    return 'This page does not exist 🙃', 404
 
 
 @app.route('/')
@@ -142,6 +142,7 @@ def render_html(title, cur_tab, labels, dates, list_or_blog):
         blog_list = list_or_blog
     else:
         blog_html = list_or_blog
+
     return render_template('index.html',
                            title=title,
                            tabs=gen_tabs(cur_tab),
